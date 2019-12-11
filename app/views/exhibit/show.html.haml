@@ -39,18 +39,6 @@
             %th 出品者
             %td
               = link_to @user.nickname, user_path
-              .right
-                -# .evaluation
-                -#   %i.fa.fa-battery-4
-                -#     %span 1
-
-                -# .evaluation
-                -#   %i.fa.fa-battery-2
-                -#     %span 0
-                
-                -# .evaluation
-                -#   %i.fa.fa-battery-0
-                -#     %span 2
           %tr.category_title
             %th カテゴリー
             %td.category_list
@@ -59,8 +47,7 @@
               =link_to ">#{@category.name}","#"
           %tr
             %th ブランド
-            %td
-              /=link_to "コーチ", "#"
+            %td コーチ
           %tr
             %th 商品の状態
             %td
@@ -76,7 +63,7 @@
           %tr
             %th 発送元地域
             %td
-              =link_to @product.prefecture, "#"
+              = @product.prefecture
           %tr
             %th 発送日の目安
             %td 2~3日で発送
@@ -84,7 +71,7 @@
     .item-price-box
       %span.iteme-price
         ¥
-        = @product.price
+        = @product.price.to_s(:delimited)
       %span.iteme-tax (税込)
       %span.iteme-shipping
         = @product.ship_fee
@@ -165,13 +152,13 @@
     %ul.media-box__social
       %li
         =link_to "#" do
-          %i.fa.fa-facebook-official.product-hover.proface
+          %i.fa.fa-facebook-official.proface
       %li
         =link_to "#" do
-          %i.fa.fa-twitter-square.product-hover.protwi
+          %i.fa.fa-twitter-square.protwi
       %li
         =link_to "#" do
-          %i.fa.fa-pinterest-square.product-hover.propin          
+          %i.fa.fa-pinterest-square.propin          
   .product--indexes
     %section.product--index
       %h2.product--index__caption
